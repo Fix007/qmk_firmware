@@ -25,3 +25,9 @@ Entering the bootloader:
 <!-- * **Bootmagic reset**: Hold down the key at (0,0) in the matrix (usually the top left key or Escape) and plug in the keyboard -->
 * **Physical reset button**: Briefly press the small button on the inner side of the PCB - you may have pads you must short instead
 <!-- * **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available -->
+
+
+## Flash commands
+
+- `qmk flash -c -kb fix007/swoop -km default -e CONVERT_TO=elite_pi -bl uf2-split-left`
+- `qmk flash -c -kb fix007/swoop -km default -e CONVERT_TO=elite_pi -bl uf2-split-right`
