@@ -30,6 +30,11 @@
 #define SOFT_SERIAL_PIN D2
 #define EE_HANDS
 
+#define SPLIT_TRANSPORT_MIRROR
+#define SPLIT_LAYER_STATE_ENABLE
+#define SPLIT_WPM_ENABLE
+#define SPLIT_OLED_ENABLE
+
 // encoders
 #define ENCODERS_PAD_A { B4 }
 #define ENCODERS_PAD_B { B5 }
