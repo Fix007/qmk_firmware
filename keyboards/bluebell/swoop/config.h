@@ -59,3 +59,7 @@
   #define RGBLIGHT_VAL_STEP 17
   #define RGBLIGHT_SLEEP
 #endif
+
+#define SPLIT_USB_DETECT
+
+#define SPLIT_USB_TIMEOUT 2000
