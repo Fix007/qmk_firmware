@@ -32,6 +32,7 @@ extern keymap_config_t keymap_config;
 #define _HEX 4
 #define _FUN 5
 #define _ADJ 6
+#define _RGB 7
 
 enum custom_keycodes {
   COLEMAK_DH = SAFE_RANGE,
@@ -102,9 +103,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *           ╰────┴────┴──────╯ ╰──────┴────┴────╯ */
 
   [_SYM] = LAYOUT_split_3x5_3(
-    KC_QUOT, KC_DQUO, KC_CIRC, KC_QUES, KC_GRV,   /**/ KC_LBRC, KC_LT,    KC_EQL,  KC_GT,   KC_RBRC,
-    KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,  /**/ KC_LCBR, KC_LPRN,  KC_COLN, KC_RPRN, KC_RCBR,
-    KC_BSLS, KC_TILD, KC_PIPE, KC_SCLN, KC_AMPR,  /**/ KC_SLSH, KC_ASTR,  KC_MINS, KC_PLUS, KC_UNDS,
+    DE_QUOT, DE_DQUO, DE_CIRC, DE_QUES, DE_GRV,   /**/ DE_LBRC, DE_LABK,  DE_EQL,  DE_RABK,   DE_RBRC,
+    DE_EXLM, DE_AT,   DE_HASH, DE_DLR,  DE_PERC,  /**/ DE_LCBR, DE_LPRN,  DE_COLN, DE_RPRN, DE_RCBR,
+    DE_BSLS, DE_TILD, DE_PIPE, DE_SCLN, DE_AMPR,  /**/ DE_SLSH, DE_ASTR,  DE_MINS, DE_PLUS, DE_UNDS,
     /**/     /**/     _v_,     _v_,     MO(_ADJ), /**/ _v_,     MO(_FUN), _v_      /**/     /**/
   ),
 /*
@@ -114,15 +115,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ├────┼────┼────┼────┼────┤     ├────├────┼────┼────┤┄───┤
    * │ 1  │ 2  │ 3  │ 4  │ 5  │     │ .  │ ◀  │ ▼  │ ▶  │ent │
    * ├────┼────┼────┼────┼────┤     ├────╰────┴────┴────╯┄───┤
-   * │ 6  │ 7  │ 8  │ 9  │ 0  │     │    │ p↑ │ p↓ │esc │ctl │
+   * │ 6  │ 7  │ 8  │ 9  │ 0  │     │esc │ p↑ │ p↓ │esc │ctl │
    * ╰────┴────┴────┴────┴────┴─╮ ╭─┴────┴────┴────┴────┴────╯
    *           │cmd │HEX │ sft  │ │      │ ▓▓ │    │
    *           ╰────┴────┴──────╯ ╰──────┴────┴────╯ */
 
   [_NAV] = LAYOUT_split_3x5_3(
-    KC_LCTL, KC_RGUI, S(KC_TAB), KC_TAB,   KC_RALT, /**/ KC_COMM, KC_HOME, KC_UP,   KC_END,  KC_DEL,
-    KC_1,    KC_2,    KC_3,      KC_4,     KC_5,    /**/ KC_DOT,  KC_LEFT, KC_DOWN, KC_RGHT, KC_ENT,
-    KC_6,    KC_7,    KC_8,      KC_9,     KC_0,    /**/ KC_ESC,  KC_PGUP, KC_PGDN, KC_ESC,  KC_LCTL,
+    KC_LCTL, KC_RGUI, S(KC_TAB), KC_TAB,   KC_RALT, /**/ DE_COMM, KC_HOME, KC_UP,   KC_END,  KC_DEL,
+    DE_1,    DE_2,    DE_3,      DE_4,     DE_5,    /**/ DE_DOT,  KC_LEFT, KC_DOWN, KC_RGHT, KC_ENT,
+    DE_6,    DE_7,    DE_8,      DE_9,     DE_0,    /**/ KC_ESC,  KC_PGUP, KC_PGDN, KC_ESC,  KC_LCTL,
     /**/     /**/     _v_,       MO(_HEX), _v_,     /**/ _v_,     KC_ENT,  _v_      /**/     /**/
   ),
   // }}}
@@ -140,10 +141,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *           ╰────┴────┴──────╯ ╰──────┴────┴────╯ */
 
   [_HEX] = LAYOUT_split_3x5_3(
-  KC_HASH, KC_COMM, KC_DOT,  KC_COLN, KC_BSPC, /**/ KC_COMM, KC_A,    KC_B,    KC_C,    KC_BSPC,
-  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    /**/ KC_DOT,  KC_D,    KC_E,    KC_F,    KC_ENT,
-  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    /**/ KC_SLSH, KC_ASTR, KC_MINS, KC_PLUS, KC_COLN,
-  /**/     /**/     KC_COMM, KC_DOT,  KC_SPC,  /**/ KC_SPC,  ___,     ___      /**/     /**/
+  DE_HASH, DE_COMM, DE_DOT,  DE_COLN, KC_BSPC, /**/ DE_COMM, DE_A,    DE_B,    DE_C,    KC_BSPC,
+  DE_1,    DE_2,    DE_3,    DE_4,    DE_5,    /**/ DE_DOT,  DE_D,    DE_E,    DE_F,    KC_ENT,
+  DE_6,    DE_7,    DE_8,    DE_9,    DE_0,    /**/ DE_SLSH, DE_ASTR, DE_MINS, DE_PLUS, DE_COLN,
+  /**/     /**/     ___,      ___,  KC_SPC,    /**/ KC_SPC,  ___,     ___      /**/     /**/
   ),
   // }}}
 
@@ -174,7 +175,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ├────┼────┼────┼────┼────┤     ├────┼────┼────┼────┼────┤
    * │GAME│    │ w↓ │ w↑ │    │     │ p↓ │ ◀  │ ▼  │ ▶  │ctl │
    * ├────┼────┼────┼────┼────┤     ├────┼────┼────┼────┼────┤
-   * │QWE │    │ p↓ │ p↑ │RGB │     │    │    │    │    │rset│
+   * │QWE │COLE│ p↓ │ p↑ │RGB │     │    │    │    │    │rset│
    * ╰────┴────┴────┴────┴────┴─╮ ╭─┴────┴────┴────┴────┴────╯
    *           │    │    │   ▓▓ │ │      │    │    │
    *           ╰────┴────┴──────╯ ╰──────┴────┴────╯ */
@@ -182,8 +183,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_ADJ] = LAYOUT_split_3x5_3(
     ___,      x__MMB, x__RMB,  x__LMB,  KC_CAPS, /**/ KC_PGUP, KC_HOME, KC_UP,   KC_END,  ___,
     /*GAM_ON*/ ___,   ___,    KC_WH_D, KC_WH_U, ___,     /**/ KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_LCTL,
-    TG(_QWERTZ), ___,    KC_PGDN, KC_PGUP, RGB_TOG, /**/ ___,     ___,     ___,     ___,     QK_BOOTLOADER,
-    /**/      /**/    _v_,     ___,   _v_,     /**/ ___,   _v_,     _v_      /**/     /**/
+    DF(_QWERTZ), DF(_COLEMAK_DH),    KC_PGDN, KC_PGUP, RGB_TOG, /**/ ___,     ___,     ___,     ___,     QK_BOOTLOADER,
+    /**/      /**/    _v_,     ___,   _v_,     /**/ MO(_RGB),   _v_,     _v_      /**/     /**/
+  ),
+
+  /*
+   * _ADJ / Adjust ── {{{
+   * ╭────┬────┬────┬────┬────╮     ╭────┬────┬────┬────┬────╮
+   * │    │    │    │    │    │     │    │    │    │    │    │
+   * ├────┼────┼────┼────┼────┤     ├────┼────┼────┼────┼────┤
+   * │    │    │    │    │    │     │    │    │    │    │    │
+   * ├────┼────┼────┼────┼────┤     ├────┼────┼────┼────┼────┤
+   * │    │    │    │    │    │     │    │    │    │    │    │
+   * ╰────┴────┴────┴────┴────┴─╮ ╭─┴────┴────┴────┴────┴────╯
+   *           │    │    │      │ │      │    │    │
+   *           ╰────┴────┴──────╯ ╰──────┴────┴────╯ */
+
+  [_RGB] = LAYOUT_split_3x5_3(
+    RGB_MODE_FORWARD,   RGB_MODE_REVERSE, ___,      ___,      ___, /**/ RGB_MODE_PLAIN, RGB_MODE_BREATHE, RGB_MODE_RAINBOW,  RGB_MODE_SWIRL,  RGB_MODE_SNAKE,
+    RGB_HUI,            RGB_SAI,          RGB_VAI,  RGB_SPI,  ___, /**/ RGB_MODE_KNIGHT, RGB_MODE_XMAS, RGB_MODE_GRADIENT,  RGB_MODE_RGBTEST,  RGB_MODE_TWINKLE,
+    RGB_HUD,            RGB_SAD,          RGB_VAD,  RGB_SPD,  ___, /**/ ___, ___, ___,  ___,  ___,
+    /**/   /**/  _v_,  ___,   _v_,  /**/ ___,   _v_,     _v_      /**/     /**/
   ),
 };
 
@@ -250,6 +270,9 @@ static void print_status_narrow(void) {
             break;
         case _ADJ:
             oled_write_P(PSTR("Adj\n"), false);
+            break;
+        case _RGB:
+            oled_write_P(PSTR("RGB\n"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
