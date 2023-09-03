@@ -54,19 +54,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*
    * Colemak DH ── {{{
    * ╭────┬────┬────┬────┬────╮     ╭────┬────┬────┬────┬────╮
-   * │ q  │ w  │ f  │ p  │ b  │     │ j  │ l  │ u  │ y  │bks │
+   * │ q  │ w  │ f  │ p  │ b  │     │ j  │ l  │ u  │ z  │bks │
    * ├────┼────┼────┼────┼────┤     ├────┼────┼────┼────┼────┤
    * │ a  │ r  │ s  │ t  │ g  │     │ m  │ n  │ e  │ i  │ o  │
    * ├────┼────┼────┼────┼────┤     ├────┼────┼────┼────┼────┤
-   * │ z  │ x  │ c  │ d  │ v  │     │ k  │ h  │ ,- │ ._ │ent^│
+   * │ y  │ x  │ c  │ d  │ v  │     │ k  │ h  │ ,- │ ._ │ent^│
    * ╰────┴────┴────┴────┴────┴─╮ ╭─┴────┴────┴────┴────┴────╯
    *           │cmd │SYM │ sft  │ │ spc  │NAV │opt │
    *           ╰────┴────┴──────╯ ╰──────┴────┴────╯ */
 
 [_COLEMAK_DH] = LAYOUT_split_3x5_3( \
-  DE_Q,    DE_W,    DE_F,    DE_P,    DE_B,                 DE_J,    DE_L,    DE_U,    DE_Y,    KC_BSPC, \
+  DE_Q,    DE_W,    DE_F,    DE_P,    DE_B,                 DE_J,    DE_L,    DE_U,    DE_Z,    KC_BSPC, \
   DE_A,    DE_R,    DE_S,    DE_T,    DE_G,                 DE_M,    DE_N,    DE_E,    DE_I,    DE_O,  \
-  DE_Z,    DE_X,    DE_C,    DE_D,    DE_V,                 DE_K,    DE_H,    DE_COMM, DE_DOT,  x__ENT,  \
+  DE_Y,    DE_X,    DE_C,    DE_D,    DE_V,                 DE_K,    DE_H,    DE_COMM, DE_DOT,  x__ENT,  \
               KC_LGUI, MO(_SYM), KC_LSFT,		            KC_SPC, MO(_NAV), KC_LALT \
 ),
 
